@@ -49,6 +49,7 @@ class HapiGER
         esm_options = _.defaults(@options.esmoptions, {
           client: 'pg'
         })
+        console.log esm_options
         knex = new knex(esm_options)
         @_esm = new PsqlESM({knex: knex})
         @_ger = new GER(@_esm, @options)
